@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About | CyberConnect Podcast</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* Extra About Page Styling */
+
+        .about-section {
+            padding: 80px 8%;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .about-section h2 {
+            color: #22d3ee;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+
+        .about-section p {
+            margin-bottom: 25px;
+            color: #cbd5e1;
+            line-height: 1.8;
+        }
+
+        .highlight {
+            color: #22d3ee;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Particles Background -->
+<div id="particles-js"></div>
+<canvas id="binaryCanvas"></canvas>
+
+<header>
+    <h1>CyberConnect Podcast</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="episodes.html">Episodes</a>
+        <a href="team.html">Team</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<section class="about-section">
+
+    <h2>Introduction</h2>
+    <p>
+        CyberConnect Podcast is an educational initiative focused on raising awareness 
+        about cybersecurity, digital laws, artificial intelligence risks, and emerging 
+        technological threats in Ghana. Through expert discussions and research-based 
+        insights, the podcast aims to simplify complex cybersecurity topics for a broad audience.
+    </p>
+
+    <h2>Problem Statement</h2>
+    <p>
+        Cyber threats in Ghana continue to escalate, ranging from misinformation campaigns 
+        to the unauthorized distribution of private content. Many citizens remain unaware 
+        of the legal implications under Ghana’s 
+        <span class="highlight">Cybersecurity Act 2020</span>, 
+        leading to increasing digital exploitation and vulnerabilities.
+    </p>
+
+    <p>
+        Recent cyber incidents affecting national infrastructure demonstrate the urgent 
+        need for digital awareness and proactive security measures. Emerging technologies, 
+        particularly artificial intelligence, further introduce new and evolving risks.
+    </p>
+
+    <h2>Objectives</h2>
+    <p>
+        The primary objective of CyberConnect Podcast is to educate listeners about the 
+        provisions of Ghana’s Cybersecurity Act 2020 and promote responsible digital behavior.
+    </p>
+
+    <p>
+        The podcast also analyzes major cyber incidents in Ghana, explores preventive 
+        strategies, and highlights career opportunities within the cybersecurity industry.
+    </p>
+
+    <h2>Significance</h2>
+    <p>
+        In a rapidly digitizing economy, cybersecurity awareness is essential. By collaborating 
+        with experts and referencing institutions such as Ghana’s 
+        <span class="highlight">Cybersecurity Authority</span>, 
+        the podcast contributes to national efforts aimed at strengthening digital security 
+        and building a more resilient society.
+    </p>
+
+</section>
+
+<footer>
+    © 2026 CyberConnect Podcast | Team House Boys
+</footer>
+
+<!-- Particles Library -->
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+<script>
+particlesJS("particles-js", {
+  particles: {
+    number: { value: 70 },
+    color: { value: "#22d3ee" },
+    shape: { type: "circle" },
+    opacity: { value: 0.4 },
+    size: { value: 3, random: true },
+    line_linked: {
+      enable: true,
+      distance: 150,
+      color: "#22d3ee",
+      opacity: 0.3,
+      width: 1
+    },
+    move: { enable: true, speed: 2 }
+  }
+});
+</script>
+
+<script>
+const canvas = document.getElementById("binaryCanvas");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const letters = "01";
+const fontSize = 14;
+const columns = canvas.width / fontSize;
+const drops = [];
+
+for (let x = 0; x < columns; x++) {
+    drops[x] = 1;
+}
+
+function drawBinary() {
+    ctx.fillStyle = "rgba(15, 23, 42, 0.05)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx.fillStyle = "#22d3ee";
+    ctx.font = fontSize + "px monospace";
+
+    for (let i = 0; i < drops.length; i++) {
+        const text = letters.charAt(Math.floor(Math.random() * letters.length));
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+            drops[i] = 0;
+        }
+
+        drops[i]++;
+    }
+}
+
+setInterval(drawBinary, 50);
+
+window.addEventListener("resize", function() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+});
+</script>
+
+</body>
+</html>

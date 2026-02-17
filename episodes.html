@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Episodes | CyberConnect Podcast</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* EPISODES PAGE */
+
+        .episodes-section {
+            padding: 80px 8%;
+            text-align: center;
+        }
+
+        .episodes-section h2 {
+            font-size: 32px;
+            color: #22d3ee;
+            margin-bottom: 10px;
+        }
+
+        .episodes-section p {
+            color: #cbd5e1;
+            margin-bottom: 50px;
+        }
+
+        .episode-card {
+            background: #1e293b;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 40px;
+            border: 1px solid transparent;
+            transition: 0.3s ease;
+        }
+
+        .episode-card:hover {
+            border: 1px solid #22d3ee;
+            transform: translateY(-5px);
+        }
+
+        .episode-card h3 {
+            color: #22d3ee;
+            margin-bottom: 15px;
+        }
+
+        .episode-card p {
+            color: #cbd5e1;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .video-placeholder {
+            width: 100%;
+            height: 350px;
+            background: #0f172a;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #22d3ee;
+            font-weight: 600;
+            border: 1px dashed #22d3ee;
+        }
+
+        /* BACKGROUND EFFECTS */
+
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: #0f172a;
+            z-index: -1;
+            top: 0;
+            left: 0;
+        }
+
+        #binaryCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        @media(max-width:768px){
+            .video-placeholder {
+                height: 200px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div id="particles-js"></div>
+<canvas id="binaryCanvas"></canvas>
+
+<header>
+    <h1>CyberConnect Podcast</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="episodes.html">Episodes</a>
+        <a href="team.html">Team</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<section class="episodes-section">
+
+    <h2>Podcast Episodes</h2>
+    <p>Explore our in-depth discussions on cybersecurity, digital law, and emerging technologies.</p>
+
+    <!-- Episode 1 -->
+    <div class="episode-card">
+        <h3>Episode 1: Understanding Ghana’s Cybersecurity Act</h3>
+        <p>
+            This episode explores key provisions of Ghana’s Cybersecurity Act 2020, 
+            legal consequences of cybercrime, and digital rights awareness. Featuring 
+            insights from cybersecurity and legal experts.
+        </p>
+        <div class="video-placeholder">
+            YouTube Video Will Appear Here
+        </div>
+    </div>
+
+    <!-- Episode 2 -->
+    <div class="episode-card">
+        <h3>Episode 2: Major Cyber Attacks in Ghana</h3>
+        <p>
+            A detailed analysis of significant cyber incidents affecting Ghana’s 
+            infrastructure and economy, along with preventive measures to enhance 
+            national digital resilience.
+        </p>
+        <div class="video-placeholder">
+            YouTube Video Will Appear Here
+        </div>
+    </div>
+
+    <!-- Episode 3 -->
+    <div class="episode-card">
+        <h3>Episode 3: AI, Emerging Technologies & Cyber Careers</h3>
+        <p>
+            An exploration of artificial intelligence risks, emerging cybersecurity 
+            trends, and career opportunities in Ghana’s growing digital ecosystem.
+        </p>
+        <div class="video-placeholder">
+            YouTube Video Will Appear Here
+        </div>
+    </div>
+
+</section>
+
+<footer>
+    © 2026 CyberConnect Podcast | Team House Boys
+</footer>
+
+<!-- PARTICLES -->
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+<script>
+particlesJS("particles-js", {
+  particles: {
+    number: { value: 70 },
+    color: { value: "#22d3ee" },
+    shape: { type: "circle" },
+    opacity: { value: 0.4 },
+    size: { value: 3, random: true },
+    line_linked: {
+      enable: true,
+      distance: 150,
+      color: "#22d3ee",
+      opacity: 0.3,
+      width: 1
+    },
+    move: { enable: true, speed: 2 }
+  }
+});
+</script>
+
+<!-- BINARY -->
+<script>
+const canvas = document.getElementById("binaryCanvas");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const letters = "01";
+const fontSize = 14;
+const columns = canvas.width / fontSize;
+const drops = [];
+
+for (let x = 0; x < columns; x++) {
+    drops[x] = 1;
+}
+
+function drawBinary() {
+    ctx.fillStyle = "rgba(15, 23, 42, 0.05)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx.fillStyle = "#22d3ee";
+    ctx.font = fontSize + "px monospace";
+
+    for (let i = 0; i < drops.length; i++) {
+        const text = letters.charAt(Math.floor(Math.random() * letters.length));
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+            drops[i] = 0;
+        }
+
+        drops[i]++;
+    }
+}
+
+setInterval(drawBinary, 50);
+
+window.addEventListener("resize", function() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+});
+</script>
+
+</body>
+</html>
