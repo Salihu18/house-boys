@@ -60,14 +60,27 @@
             margin-bottom: 10px;
         }
 
-        .team-card p {
-            font-size: 14px;
-            color: #cbd5e1;
-        }
-        .linkedin-btn {
+        .team-card {
+    background: #1e293b;
+    padding: 25px;
+    border-radius: 12px;
+    transition: 0.3s ease;
+    border: 1px solid transparent;
+    position: relative;
+}
+
+/* Glow on hover */
+.team-card:hover {
+    transform: translateY(-6px);
+    border: 1px solid #22d3ee;
+    box-shadow: 0 0 20px rgba(34, 211, 238, 0.6);
+}
+
+/* LinkedIn Button */
+.linkedin-btn {
     display: inline-block;
     margin-top: 12px;
-    padding: 6px 12px;
+    padding: 6px 14px;
     background: #0a66c2;
     color: white;
     text-decoration: none;
@@ -76,10 +89,33 @@
     transition: 0.3s ease;
 }
 
+/* Button Glow */
 .linkedin-btn:hover {
     background: #004182;
     transform: translateY(-2px);
+    box-shadow: 0 0 15px rgba(10, 102, 194, 0.8);
 }
+
+
+
+/* PROFILE IMAGE */
+
+.profile-img {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid #22d3ee;
+    transition: 0.4s ease;
+}
+
+/* Glow effect on hover */
+.team-card:hover .profile-img {
+    box-shadow: 0 0 20px rgba(34, 211, 238, 0.8);
+    transform: scale(1.05);
+}
+
 
 
         /* BACKGROUND ELEMENTS */
@@ -129,6 +165,8 @@
     <div class="team-grid">
 
         <div class="team-card">
+            <img src="assets/images/member1.jpg" alt="Selase Kofi Dugah" class="profile-img">
+
           <h3>Selase Kofi Dugah</h3>
           <div class="role">Host</div>
           <p>Leads and moderates all podcast sessions, ensuring engaging discussions.</p>
