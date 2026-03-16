@@ -1,3 +1,4 @@
+
 /* =========================
    GLOBAL STYLES
 ========================= */
@@ -9,8 +10,8 @@
 }
 
 body {
-    background-color: #0f172a;
-    color: white;
+    background-color: #f4ffe9;
+    color: #1f2937;
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
 }
@@ -20,21 +21,21 @@ body {
 ========================= */
 
 header {
-    background: #0f172a;
+    background: #ffffff;
     padding: 20px 8%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #1e293b;
+    border-bottom: 1px solid #d1fae5;
 }
 
 header h1 {
-    color: #22d3ee;
+    color: #155E55;
     font-size: 22px;
 }
 
 nav a {
-    color: white;
+    color: #1f2937;
     text-decoration: none;
     margin-left: 20px;
     font-size: 14px;
@@ -42,12 +43,21 @@ nav a {
 }
 
 nav a:hover {
-    color: #22d3ee;
+    color: #155E55;
+}
+
+
+
+nav a.active {
+  color: #8EEA4A;
+  border-bottom: 2px solid #155E55;
+  transition: width 0.3 ease;
 }
 
 /* =========================
    HERO SECTION
 ========================= */
+
 
 .hero {
     text-align: center;
@@ -57,17 +67,75 @@ nav a:hover {
 .hero h2 {
     font-size: 42px;
     margin-bottom: 20px;
+    color: #155E55;
 }
 
 .hero span {
-    color: #22d3ee;
+    color: #8EEA4A;
 }
 
 .hero p {
     max-width: 700px;
     margin: auto;
     margin-bottom: 30px;
-    color: #cbd5e1;
+    color: #4b5563;
+}
+/* HERO SECTION */
+
+.hero {
+  padding: 100px 10%;
+  background: #f8fafc;
+}
+
+/* Container Layout */
+
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+/* TEXT SIDE */
+
+.hero-text {
+  max-width: 500px;
+}
+
+.hero-text h1 {
+  font-size: 52px;
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+
+/* IMAGE SIDE */
+
+.hero-image img {
+  width: 550px;
+  max-width: 100%;
+}
+@media (max-width: 768px) {
+
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text h1 {
+    font-size: 38px;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
 }
 
 /* =========================
@@ -77,8 +145,8 @@ nav a:hover {
 .btn {
     display: inline-block;
     padding: 12px 25px;
-    background: #22d3ee;
-    color: #0f172a;
+    background: #155E55;
+    color: white;
     text-decoration: none;
     border-radius: 6px;
     font-weight: 600;
@@ -86,7 +154,8 @@ nav a:hover {
 }
 
 .btn:hover {
-    background: white;
+    background: #8EEA4A;
+    color: #155E55;
     transform: translateY(-2px);
 }
 
@@ -102,13 +171,13 @@ nav a:hover {
 .section h3 {
     font-size: 30px;
     margin-bottom: 20px;
-    color: #22d3ee;
+    color: #155E55;
 }
 
 .section p {
     max-width: 800px;
     margin: auto;
-    color: #cbd5e1;
+    color: #4b5563;
 }
 
 /* =========================
@@ -123,26 +192,26 @@ nav a:hover {
 }
 
 .card {
-    background: #1e293b;
+    background: #ffffff;
     padding: 30px;
     border-radius: 12px;
     transition: 0.3s ease;
-    border: 1px solid transparent;
+    border: 1px solid #d1fae5;
 }
 
 .card:hover {
     transform: translateY(-6px);
-    border: 1px solid #22d3ee;
+    border: 1px solid #8EEA4A;
 }
 
 .card h4 {
     margin-bottom: 15px;
-    color: #22d3ee;
+    color: #155E55;
 }
 
 .card p {
     font-size: 14px;
-    color: #cbd5e1;
+    color: #4b5563;
 }
 
 /* =========================
@@ -150,11 +219,11 @@ nav a:hover {
 ========================= */
 
 footer {
-    background: #1e293b;
+    background: #155E55;
     text-align: center;
     padding: 20px;
     font-size: 14px;
-    color: #cbd5e1;
+    color: white;
     margin-top: 40px;
 }
 
@@ -172,6 +241,7 @@ footer {
         font-size: 12px;
     }
 }
+
 /* =========================
    LOADER
 ========================= */
@@ -180,7 +250,7 @@ footer {
     position: fixed;
     width: 100%;
     height: 100vh;
-    background: #0f172a;
+    background: #f4ffe9;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -191,8 +261,8 @@ footer {
 .spinner {
     width: 50px;
     height: 50px;
-    border: 5px solid #1e293b;
-    border-top: 5px solid #22d3ee;
+    border: 5px solid #d1fae5;
+    border-top: 5px solid #155E55;
     border-radius: 50%;
     animation: spin 1s linear infinite;
     margin-bottom: 15px;
@@ -217,7 +287,7 @@ footer {
     position: fixed;
     width: 100%;
     height: 100%;
-    background: #0f172a;
+    background: #f4ffe9;
     z-index: -1;
     top: 0;
     left: 0;
@@ -234,3 +304,5 @@ footer {
     z-index: -1;
     pointer-events: none;
 }
+
+

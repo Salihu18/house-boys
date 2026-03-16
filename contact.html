@@ -10,111 +10,115 @@
 
     <link rel="stylesheet" href="css/style.css">
 
-    <style>
-        /* CONTACT PAGE */
+ 
+<style>
 
-        .contact-section {
-            padding: 80px 8%;
-            text-align: center;
-            max-width: 900px;
-            margin: auto;
+/* CONTACT PAGE */
+
+.contact-section {
+    padding: 80px 8%;
+    text-align: center;
+    max-width: 900px;
+    margin: auto;
+}
+
+.contact-section h2 {
+    font-size: 32px;
+    color: #155E55;
+    margin-bottom: 10px;
+}
+
+.contact-section p {
+    color: #4b5563;
+    margin-bottom: 40px;
+}
+
+.contact-form {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid #d1fae5;
+    transition: 0.3s ease;
+}
+
+.contact-form:hover {
+    border: 1px solid #8EEA4A;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    outline: none;
+    font-size: 14px;
+    background: #f9fafb;
+    color: #1f2937;
+    border: 1px solid #d1d5db;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border: 1px solid #155E55;
+}
+
+.contact-form button {
+    background: #155E55;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.contact-form button:hover {
+    background: #8EEA4A;
+    color: #155E55;
+    transform: translateY(-2px);
+}
+
+.social-links {
+    margin-top: 30px;
+}
+
+.social-links a {
+    color: #155E55;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.social-links a:hover {
+    color: #8EEA4A;
+}
+
+/* BACKGROUND EFFECTS */
+
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #f4ffe9;
+    z-index: -1;
+}
+
+#binaryCanvas {
+    position: fixed;
+    z-index: -1;
+    pointer-events: none;
+}
+.nav a.active {
+          color: #8EEA4A;
+             border-bottom: 2px solid #155E55;
+             transition: width 0.3 ease;
         }
 
-        .contact-section h2 {
-            font-size: 32px;
-            color: #22d3ee;
-            margin-bottom: 10px;
-        }
+</style>
 
-        .contact-section p {
-            color: #cbd5e1;
-            margin-bottom: 40px;
-        }
 
-        .contact-form {
-            background: #1e293b;
-            padding: 40px;
-            border-radius: 12px;
-            border: 1px solid transparent;
-            transition: 0.3s ease;
-        }
-
-        .contact-form:hover {
-            border: 1px solid #22d3ee;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 20px;
-            border-radius: 6px;
-            border: none;
-            outline: none;
-            font-size: 14px;
-            background: #0f172a;
-            color: white;
-            border: 1px solid #334155;
-        }
-
-        .contact-form input:focus,
-        .contact-form textarea:focus {
-            border: 1px solid #22d3ee;
-        }
-
-        .contact-form button {
-            background: #22d3ee;
-            color: #0f172a;
-            padding: 12px 25px;
-            border: none;
-            border-radius: 6px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: 0.3s ease;
-        }
-
-        .contact-form button:hover {
-            background: white;
-            transform: translateY(-2px);
-        }
-
-        .social-links {
-            margin-top: 30px;
-        }
-
-        .social-links a {
-            color: #22d3ee;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: 0.3s;
-        }
-
-        .social-links a:hover {
-            color: white;
-        }
-
-        /* BACKGROUND EFFECTS */
-
-        #particles-js {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            background: #0f172a;
-            z-index: -1;
-            top: 0;
-            left: 0;
-        }
-
-        #binaryCanvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: -1;
-            pointer-events: none;
-        }
-
-    </style>
 </head>
 
 <body>
@@ -130,7 +134,7 @@
         <a href="episodes.html">Episodes</a>
         <a href="team.html">Team</a>
         <a href="gallery.html">Gallery</a>
-        <a href="contact.html">Contact</a>
+        <a href="contact.html" class="active">Contact</a>
     </nav>
 </header>
 
