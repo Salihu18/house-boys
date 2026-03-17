@@ -111,6 +111,17 @@
     position: fixed;
     z-index: -1;
 }
+.logo  {
+  width: 70px;
+  max-width: 100%;
+}
+.logo {
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
 
 
 </style>
@@ -124,7 +135,8 @@
 <canvas id="binaryCanvas"></canvas>
 
 <header>
-    <h1>CyberConnect Podcast</h1>
+    <img src="/assets/images/logo.jpeg" class="logo" alt="logo">
+    <h1>CyberKonnect Podcast</h1>
     <nav>
         <a href="index.html">Home</a>
         <a href="about.html">About</a>

@@ -19,7 +19,17 @@ body {
 /* =========================
    HEADER / NAVIGATION
 ========================= */
+.logo  {
+  width: 70px;
+  max-width: 100%;
+}
+.logo {
+  transition: transform 0.3s ease;
+}
 
+.logo:hover {
+  transform: scale(1.05);
+}
 header {
     background: #ffffff;
     padding: 20px 8%;
@@ -32,6 +42,8 @@ header {
 header h1 {
     color: #155E55;
     font-size: 22px;
+    margin-right: auto;
+    text-align: left;
 }
 
 nav a {
