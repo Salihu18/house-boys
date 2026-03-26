@@ -101,12 +101,12 @@ nav a.active {
 
 /* Container Layout */
 
-.hero-container {
+/*.hero-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 50px;
-}
+}/
 
 /* TEXT SIDE */
 
@@ -129,9 +129,14 @@ nav a.active {
 
 /* IMAGE SIDE */
 
-.hero-image img {
-  width: 550px;
-  max-width: 100%;
+.hero {
+  background-image: url("/assets/images/Hero Section.jpeg");
+  background-size: cover;        /* fills the div */
+  background-position: center;   /* centers image */
+  background-repeat: no-repeat;  /* prevents repeating */
+
+  width: 100%;
+  height: 500px; /* adjust height as needed */
 }
 @media (max-width: 768px) {
 
