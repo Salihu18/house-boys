@@ -130,7 +130,7 @@ nav a.active {
 /* IMAGE SIDE */
 
 .hero {
-  background-image: url("assets/images/Hero Section.webp");
+  background-image: url("assets/images/hero.webp");
   background-size: cover;        /* fills the div */
   background-position: center;   /* centers image */
   background-repeat: no-repeat;  /* prevents repeating */
