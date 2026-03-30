@@ -1,57 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>About | CyberConnect Podcast</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>About | CyberConnect Podcast</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/style.css">
+<style>
 
-    <style>
-        /* Extra About Page Styling */
+/* =========================
+   GLOBAL STYLES
+========================= */
 
-        .about-section {
-            padding: 80px 8%;
-            max-width: 1000px;
-            margin: auto;
-        }
-
-        .about-section h2 {
-            color:  #155E55;
-            margin-bottom: 20px;
-            font-size: 28px;
-        }
-
-        .about-section p {
-            margin-bottom: 25px;
-            color:  #155E55;
-            line-height: 1.8;
-        }
-
-        .highlight {
-            color:  #155E55;
-            font-weight: 600;
-        }
-        .nav a.active {
-          color: #8EEA4A;
-             border-bottom: 2px solid #155E55;
-             transition: width 0.3 ease;
-        }
-        .logo  {
-  width: 70px;
-  max-width: 100%;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
+body {
+    background-color: #f4ffe9;
+    color: #1f2937;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    background: #ffffff;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #d1fae5;
+
+    position: relative;
+}
+
 .logo {
-  transition: transform 0.3s ease;
+    width: 70px;
+    transition: transform 0.3s ease;
 }
 
 .logo:hover {
-  transform: scale(1.05);
+    transform: scale(1.05);
 }
-    </style>
+
+header h1 {
+    color: #155E55;
+    font-size: 22px;
+    margin-right: auto;
+    margin-left: 10px;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav {
+    display: flex;
+}
+
+nav a {
+    color: #1f2937;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+nav a:hover {
+    color: #155E55;
+}
+
+nav a.active {
+    color: #8EEA4A;
+    border-bottom: 2px solid #155E55;
+}
+
+/* =========================
+   HAMBURGER
+========================= */
+
+.hamburger {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* =========================
+   ABOUT SECTION
+========================= */
+
+.about-section {
+    padding: 80px 8%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.about-section h2 {
+    color: #155E55;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+.about-section p {
+    margin-bottom: 25px;
+    color: #155E55;
+    line-height: 1.8;
+}
+
+.highlight {
+    color: #155E55;
+    font-weight: 600;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #155E55;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    color: white;
+    margin-top: 40px;
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+    /* Show hamburger */
+
+    .hamburger {
+        display: block;
+    }
+
+    /* Mobile navigation */
+
+    nav {
+        position: absolute;
+        top: 80px;
+        right: 0;
+
+        background: white;
+        width: 220px;
+
+        flex-direction: column;
+
+        transform: translateX(100%);
+        transition: 0.3s ease;
+
+        border-left: 1px solid #d1fae5;
+        z-index: 1000;
+    }
+
+    nav.active {
+        transform: translateX(0);
+    }
+
+    nav a {
+        padding: 15px;
+        border-bottom: 1px solid #eee;
+        margin-left: 0;
+    }
+
+    /* Mobile text spacing */
+
+    .about-section {
+        padding: 60px 6%;
+    }
+
+    .about-section h2 {
+        font-size: 24px;
+    }
+
+}
+
+/* =========================
+   PARTICLES BACKGROUND
+========================= */
+
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: -1;
+    top: 0;
+    left: 0;
+}
+
+/* =========================
+   BINARY CANVAS
+========================= */
+
+#binaryCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    pointer-events: none;
+}
+
+</style>
+
 </head>
 
 <body>
@@ -61,73 +223,98 @@
 <canvas id="binaryCanvas"></canvas>
 
 <header>
-    <img src="/assets/images/logo.jpeg" class="logo" alt="logo">
-    <h1>CyberKonnect Podcast</h1>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html" class="active">About</a>
-        <a href="episodes.html">Episodes</a>
-        <a href="team.html">Team</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="contact.html">Contact</a>
-    </nav>
+
+<img src="assets/images/logo.webp" class="logo" alt="logo">
+
+<h1>CyberKonnect Podcast</h1>
+
+<!-- Hamburger -->
+
+<div class="hamburger" id="hamburger">
+☰
+</div>
+
+<nav id="nav-menu">
+
+<a href="index.html">Home</a>
+<a href="about.html" class="active">About</a>
+<a href="episodes.html">Episodes</a>
+<a href="team.html">Team</a>
+<a href="gallery.html">Gallery</a>
+<a href="contact.html">Contact</a>
+
+</nav>
+
 </header>
 
 <section class="about-section">
 
-    <h2>Introduction</h2>
-    <p>
-        CyberConnect Podcast is an educational initiative focused on raising awareness 
-        about cybersecurity, digital laws, artificial intelligence risks, and emerging 
-        technological threats in Ghana. Through expert discussions and research-based 
-        insights, the podcast aims to simplify complex cybersecurity topics for a broad audience.
-    </p>
+<h2>Introduction</h2>
 
-    <h2>Problem Statement</h2>
-    <p>
-        Cyber threats in Ghana continue to escalate, ranging from misinformation campaigns 
-        to the unauthorized distribution of private content. Many citizens remain unaware 
-        of the legal implications under Ghana’s 
-        <span class="highlight">Cybersecurity Act 2020</span>, 
-        leading to increasing digital exploitation and vulnerabilities.
-    </p>
+<p>
+CyberConnect Podcast is an educational initiative focused on raising awareness 
+about cybersecurity, digital laws, artificial intelligence risks, and emerging 
+technological threats in Ghana.
+</p>
 
-    <p>
-        Recent cyber incidents affecting national infrastructure demonstrate the urgent 
-        need for digital awareness and proactive security measures. Emerging technologies, 
-        particularly artificial intelligence, further introduce new and evolving risks.
-    </p>
+<h2>Problem Statement</h2>
 
-    <h2>Objectives</h2>
-    <p>
-        The primary objective of CyberConnect Podcast is to educate listeners about the 
-        provisions of Ghana’s Cybersecurity Act 2020 and promote responsible digital behavior.
-    </p>
+<p>
+Cyber threats in Ghana continue to escalate, ranging from misinformation campaigns 
+to unauthorized distribution of private content. Many citizens remain unaware 
+of the legal implications under Ghana’s 
+<span class="highlight">Cybersecurity Act 2020</span>.
+</p>
 
-    <p>
-        The podcast also analyzes major cyber incidents in Ghana, explores preventive 
-        strategies, and highlights career opportunities within the cybersecurity industry.
-    </p>
+<p>
+Recent cyber incidents affecting national infrastructure demonstrate the urgent 
+need for digital awareness and proactive security measures.
+</p>
 
-    <h2>Significance</h2>
-    <p>
-        In a rapidly digitizing economy, cybersecurity awareness is essential. By collaborating 
-        with experts and referencing institutions such as Ghana’s 
-        <span class="highlight">Cybersecurity Authority</span>, 
-        the podcast contributes to national efforts aimed at strengthening digital security 
-        and building a more resilient society.
-    </p>
+<h2>Objectives</h2>
+
+<p>
+The primary objective of CyberConnect Podcast is to educate listeners about 
+responsible digital behavior and cybersecurity awareness.
+</p>
+
+<h2>Significance</h2>
+
+<p>
+CyberConnect collaborates with experts and institutions such as Ghana’s 
+<span class="highlight">Cybersecurity Authority</span>, 
+helping strengthen digital resilience.
+</p>
 
 </section>
 
 <footer>
-    © 2026 CyberConnect Podcast | Team House Boys
+© 2026 CyberConnect Podcast | Team House Boys
 </footer>
 
+<!-- =========================
+     HAMBURGER SCRIPT
+========================= -->
+
+<script>
+
+const hamburger = document.getElementById("hamburger");
+const navMenu = document.getElementById("nav-menu");
+
+hamburger.addEventListener("click", () => {
+
+    navMenu.classList.toggle("active");
+
+});
+
+</script>
+
 <!-- Particles Library -->
+
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 
 <script>
+
 particlesJS("particles-js", {
   particles: {
     number: { value: 70 },
@@ -145,9 +332,8 @@ particlesJS("particles-js", {
     move: { enable: true, speed: 2 }
   }
 });
+
 </script>
-
-
 
 </body>
 </html>

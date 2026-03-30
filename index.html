@@ -32,6 +32,12 @@
     
     <img src="assets/images/logo.webp" class="logo" alt="logo">
      <h1>CyberKonnect Podcast</h1>
+
+<!-- Hamburger (Mobile Only) -->
+
+<div class="hamburger" id="hamburger">
+☰
+</div>
     <nav>
         <a href="index.html" class="active">Home</a>
         <a href="about.html">About</a>
@@ -192,6 +198,19 @@ particlesJS("particles-js", {
   },
   retina_detect: true
 });
+
+
+
+const hamburger = document.getElementById("hamburger");
+const navMenu = document.getElementById("nav-menu");
+
+hamburger.addEventListener("click", () => {
+
+    navMenu.classList.toggle("active");
+
+});
+
+
 </script>
 
 

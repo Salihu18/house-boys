@@ -1,157 +1,356 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Team | CyberConnect Podcast</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<style>
-
 /* RESET */
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-font-family:'Poppins',sans-serif;
+/* BODY */
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f4ffe9;
+  color: #1f2937;
+}
+
+/* IMAGES */
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 /* HEADER */
-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px 8%;
-background:white;
-border-bottom:1px solid #d1fae5;
+
+header {
+
+  background: white;
+
+  padding: 15px 8%;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  border-bottom: 1px solid #d1fae5;
+
+  position: relative;
 }
 
-.logo{
-width:70px;
+/* LOGO */
+
+.logo {
+  width: 65px;
 }
 
-nav{
-display:flex;
-gap:25px;
+/* NAVIGATION */
+
+nav {
+
+  display: flex;
 }
 
-nav a{
-text-decoration:none;
-color:#155E55;
+nav a {
+
+  text-decoration: none;
+
+  color: #1f2937;
+
+  margin-left: 20px;
+
+  font-size: 14px;
 }
 
-nav a.active{
-color:#8EEA4A;
-border-bottom:2px solid #155E55;
+nav a:hover {
+  color: #155E55;
+}
+
+nav a.active {
+
+  color: #8EEA4A;
+
+  border-bottom: 2px solid #155E55;
 }
 
 /* HAMBURGER */
-.hamburger{
-display:none;
-font-size:28px;
-cursor:pointer;
+
+.menu-toggle {
+
+  display: none;
+
+  flex-direction: column;
+
+  cursor: pointer;
 }
 
-/* TEAM */
-.team-section{
-padding:80px 8%;
-text-align:center;
+.menu-toggle span {
+
+  width: 25px;
+
+  height: 3px;
+
+  background: #155E55;
+
+  margin: 4px 0;
 }
 
-.team-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-margin-top:40px;
+/* HERO */
+
+.hero {
+
+  background-image: url("../assets/images/hero.webp");
+
+  background-size: cover;
+
+  background-position: center;
+
+  background-repeat: no-repeat;
+
+  min-height: 500px;
+
+  display: flex;
+
+  align-items: center;
+
+  padding: 100px 8%;
 }
 
-.team-card{
-background:white;
-padding:25px;
-border-radius:12px;
-border:1px solid #d1fae5;
-transition:0.3s;
+.hero-container {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  width: 100%;
 }
 
-.team-card:hover{
-transform:translateY(-5px);
-border:1px solid #8EEA4A;
+.hero-text {
+
+  max-width: 500px;
 }
 
-.profile-img{
-width:110px;
-height:110px;
-border-radius:50%;
-object-fit:cover;
-margin-bottom:10px;
+.hero-text h2 {
+
+  font-size: 42px;
+
+  margin-bottom: 20px;
+
+  color: #155E55;
 }
 
-/* MOBILE */
-@media(max-width:768px){
+.hero span {
 
-nav{
-position:absolute;
-top:80px;
-right:0;
-background:white;
-flex-direction:column;
-width:200px;
-display:none;
-padding:20px;
+  color: #8EEA4A;
 }
 
-nav.show{
-display:flex;
+.hero-text p {
+
+  font-size: 18px;
+
+  margin-bottom: 30px;
 }
 
-.hamburger{
-display:block;
+/* BUTTON */
+
+.btn {
+
+  display: inline-block;
+
+  padding: 12px 25px;
+
+  background: #155E55;
+
+  color: white;
+
+  text-decoration: none;
+
+  border-radius: 6px;
+
+  font-weight: 600;
 }
 
+/* SECTIONS */
+
+.section {
+
+  padding: 70px 8%;
+
+  text-align: center;
+}
+
+/* CARDS */
+
+.cards {
+
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+  gap: 25px;
+
+  margin-top: 40px;
+}
+
+.card {
+
+  background: white;
+
+  padding: 30px;
+
+  border-radius: 12px;
+
+  border: 1px solid #d1fae5;
 }
 
 /* FOOTER */
-footer{
-text-align:center;
-padding:20px;
-margin-top:60px;
+
+footer {
+
+  background: #155E55;
+
+  color: white;
+
+  text-align: center;
+
+  padding: 20px;
+
+  margin-top: 40px;
 }
 
-</style>
-</head>
+/* MOBILE */
 
-<body>
+@media (max-width: 768px) {
 
-<header>
+/* SHOW HAMBURGER */
 
-<img src="/assets/images/logo.jpeg" class="logo">
+.menu-toggle {
 
-<h1>CyberKonnect Podcast</h1>
+  display: flex;
+}
 
-<div class="hamburger" onclick="toggleMenu()">☰</div>
+/* MOBILE NAV */
 
-<nav id="navMenu">
+nav {
 
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="episodes.html">Episodes</a>
-<a href="team.html" class="active">Team</a>
-<a href="gallery.html">Gallery</a>
-<a href="contact.html">Contact</a>
+  position: absolute;
 
-</nav>
+  top: 70px;
 
-</header>
+  right: 0;
 
-<section class="team-section">
+  background: white;
 
-<h2>Meet the Team</h2>
+  width: 100%;
 
-<div class="team-grid">
+  flex-direction: column;
+
+  align-items: center;
+
+  display: none;
+
+  padding: 20px 0;
+}
+
+nav.active {
+
+  display: flex;
+}
+
+nav a {
+
+  margin: 10px 0;
+
+  font-size: 16px;
+}
+
+/* HERO MOBILE */
+
+.hero {
+
+  padding: 80px 20px;
+
+  min-height: 400px;
+}
+
+.hero-container {
+
+  flex-direction: column;
+
+  text-align: center;
+}
+
+.hero-text h2 {
+
+  font-size: 28px;
+}
+
+}
+
+<!-- Loader -->
+<div id="loader">
+    <div class="spinner"></div>
+    <p>Initializing CyberConnect...</p>
+</div>
+<!-- Particles Background -->
+<div id="particles-js"></div>
+<canvas id="binaryCanvas"></canvas>
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+<script>
+particlesJS("particles-js", {
+  particles: {
+    number: { value: 80 },
+    color: { value: "#22d3ee" },
+    shape: { type: "circle" },
+    opacity: {
+      value: 0.5,
+      random: false
+    },
+    size: {
+      value: 3,
+      random: true
+    },
+    line_linked: {
+      enable: true,
+      distance: 150,
+      color: "#22d3ee",
+      opacity: 0.4,
+      width: 1
+    },
+    move: {
+      enable: true,
+      speed: 2,
+      direction: "none",
+      random: false,
+      straight: false,
+      out_mode: "out"
+    }
+  },
+  interactivity: {
+    detect_on: "canvas",
+    events: {
+      onhover: {
+        enable: true,
+        mode: "repulse"
+      },
+      onclick: {
+        enable: true,
+        mode: "push"
+      }
+    },
+    modes: {
+      repulse: { distance: 100 },
+      push: { particles_nb: 4 }
+    }
+  },
+  retina_detect: true
+}); 
+
 
 <div class="team-card">
             <img src="assets/images/member1.jpg" alt="Selase Kofi Dugah" class="profile-img">
@@ -275,21 +474,3 @@ margin-top:60px;
              View LinkedIn
           </a>
         </div>
-
-
-</div>
-
-</section>
-
-<footer>
-© 2026 CyberConnect Podcast | Team House Boys
-</footer>
-
-<script>
-function toggleMenu(){
-document.getElementById("navMenu").classList.toggle("show");
-}
-</script>
-
-</body>
-</html>
