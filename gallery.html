@@ -139,22 +139,16 @@ margin-top:60px;
 <body>
 
 <header>
-
-<img src="/assets/images/logo.jpeg" class="logo">
-
-<h1>CyberKonnect Podcast</h1>
-
-<div class="hamburger" onclick="toggleMenu()">☰</div>
-
-<nav id="navMenu">
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="episodes.html">Episodes</a>
-<a href="team.html">Team</a>
-<a href="gallery.html" class="active">Gallery</a>
-<a href="contact.html">Contact</a>
-</nav>
-
+    <img src="/assets/images/logo.jpeg" class="logo" alt="logo">
+    <h1>CyberKonnect Podcast</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="episodes.html">Episodes</a>
+        <a href="team.html">Team</a>
+        <a href="gallery.html" class="active">Gallery</a>
+        <a href="contact.html">Contact</a>
+    </nav>
 </header>
 
 <section class="gallery-section">
@@ -162,20 +156,25 @@ margin-top:60px;
 <h2>Media Gallery</h2>
 <p>Behind the scenes and content.</p>
 
-<div class="image-grid">
-<img src="assets/images/photo1.jpg">
-<img src="assets/images/photo2.jpg">
-<img src="assets/images/photo3.jpg">
-<img src="assets/images/photo4.jpg">
-</div>
+    <!-- PHOTO GRID -->
+    <div class="image-grid">
+        <img src="assets/images/photo1.jpg" alt="Podcast Session">
+        <img src="assets/images/photo2.jpg" alt="Team Discussion">
+        <img src="assets/images/photo3.jpg" alt="Recording Setup">
+        <img src="assets/images/photo4.jpg" alt="Guest Speaker">
+    </div>
 
-<div class="media-section">
-<h2>Trailer</h2>
-
-<div class="video-container">
-<iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID"></iframe>
-</div>
-</div>
+    <!-- VIDEO SECTION -->
+    <div class="media-section">
+        <h2>Trailer</h2>
+        <div class="video-container">
+            <!-- Replace with your YouTube video -->
+            <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+                    frameborder="0"
+                    allowfullscreen>
+            </iframe>
+        </div>
+    </div>
 
 <div class="media-section">
 <h2>Event Flyers</h2>
