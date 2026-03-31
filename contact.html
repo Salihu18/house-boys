@@ -1,19 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Contact | CyberConnect Podcast</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Contact | CyberConnect Podcast</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/style.css">
-
- 
 <style>
 
-/* CONTACT PAGE */
+/* RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* HEADER */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 8%;
+    background: white;
+    border-bottom: 1px solid #d1fae5;
+}
+
+.logo {
+    width: 70px;
+    transition: 0.3s;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+/* NAV */
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #155E55;
+    font-weight: 500;
+}
+
+nav a.active {
+    color: #8EEA4A;
+    border-bottom: 2px solid #155E55;
+}
+
+/* HAMBURGER */
+
+.hamburger {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* CONTACT SECTION */
 
 .contact-section {
     padding: 80px 8%;
@@ -25,7 +79,6 @@
 .contact-section h2 {
     font-size: 32px;
     color: #155E55;
-    margin-bottom: 10px;
 }
 
 .contact-section p {
@@ -38,11 +91,6 @@
     padding: 40px;
     border-radius: 12px;
     border: 1px solid #d1fae5;
-    transition: 0.3s ease;
-}
-
-.contact-form:hover {
-    border: 1px solid #8EEA4A;
 }
 
 .contact-form input,
@@ -51,92 +99,95 @@
     padding: 12px;
     margin-bottom: 20px;
     border-radius: 6px;
-    outline: none;
-    font-size: 14px;
-    background: #f9fafb;
-    color: #1f2937;
     border: 1px solid #d1d5db;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-    border: 1px solid #155E55;
 }
 
 .contact-form button {
     background: #155E55;
     color: white;
     padding: 12px 25px;
-    border: none;
     border-radius: 6px;
-    font-weight: 600;
+    border: none;
     cursor: pointer;
-    transition: 0.3s ease;
 }
 
 .contact-form button:hover {
     background: #8EEA4A;
     color: #155E55;
-    transform: translateY(-2px);
 }
+
+/* SOCIAL */
 
 .social-links {
     margin-top: 30px;
 }
 
 .social-links a {
-    color: #155E55;
     margin: 0 15px;
     text-decoration: none;
-    font-weight: 600;
+    color: #155E55;
 }
 
-.social-links a:hover {
-    color: #8EEA4A;
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 60px;
 }
 
-/* BACKGROUND EFFECTS */
+/* MOBILE VERSION */
 
-#particles-js {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background: #f4ffe9;
-    z-index: -1;
-}
+@media(max-width:768px){
 
-#binaryCanvas {
-    position: fixed;
-    z-index: -1;
-    pointer-events: none;
-}
-.nav a.active {
-          color: #8EEA4A;
-             border-bottom: 2px solid #155E55;
-             transition: width 0.3 ease;
-        }
-.logo  {
-  width: 70px;
-  max-width: 100%;
-}
-.logo {
-  transition: transform 0.3s ease;
+nav {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    width: 200px;
+    display: none;
+    padding: 20px;
 }
 
-.logo:hover {
-  transform: scale(1.05);
+nav.show {
+    display: flex;
 }
+
+.hamburger {
+    display: block;
+}
+
+}
+
 </style>
-
 
 </head>
 
 <body>
 
-<div id="particles-js"></div>
-<canvas id="binaryCanvas"></canvas>
-
 <header>
+<<<<<<< HEAD
+
+<img src="/assets/images/logo.jpeg" class="logo">
+
+<h1>CyberKonnect Podcast</h1>
+
+<div class="hamburger" onclick="toggleMenu()">
+☰
+</div>
+
+<nav id="navMenu">
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="episodes.html">Episodes</a>
+<a href="team.html">Team</a>
+<a href="gallery.html">Gallery</a>
+<a href="contact.html" class="active">Contact</a>
+</nav>
+
+=======
     <img src="assets/images/logo.webp" class="logo" alt="logo" style="margin-right: 20px; "> 
     <h1>CyberKonnect Podcast</h1>
     <nav>
@@ -147,58 +198,66 @@
         <a href="gallery.html">Gallery</a>
         <a href="contact.html" class="active">Contact</a>
     </nav>
+>>>>>>> ad05400b957e9fae3e1dd235d27602bbfc0db359
 </header>
 
 <section class="contact-section">
 
-    <h2>Contact Us</h2>
-    <p>Have questions, suggestions, or want to collaborate? Send us a message.</p>
+<h2>Contact Us</h2>
 
-    <div class="contact-form">
-        <form>
-            <input type="text" placeholder="Your Full Name" required>
-            <input type="email" placeholder="Your Email Address" required>
-            <textarea rows="5" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-    </div>
+<p>Have questions, suggestions, or want to collaborate? Send us a message.</p>
 
+<<<<<<< HEAD
+<div class="contact-form">
+
+<form>
+
+<input type="text" placeholder="Your Full Name" required>
+
+<input type="email" placeholder="Your Email Address" required>
+
+<textarea rows="5" placeholder="Your Message" required></textarea>
+
+<button type="submit">Send Message</button>
+
+</form>
+
+</div>
+
+<div class="social-links">
+
+<p>Follow us:</p>
+
+<a href="#">YouTube</a>
+<a href="#">LinkedIn</a>
+<a href="#">Instagram</a>
+
+</div>
+=======
     <div class="social-links">
         <p>Follow us:</p>
         <a href="https://youtube.com/@cyberkonnectpodcast?si=wmMqF7MTQ94YUBRk">YouTube</a>
         
     </div>
+>>>>>>> ad05400b957e9fae3e1dd235d27602bbfc0db359
 
 </section>
 
 <footer>
-    © 2026 CyberConnect Podcast | Team House Boys
+
+© 2026 CyberConnect Podcast | Team House Boys
+
 </footer>
 
-<!-- PARTICLES -->
-<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-
 <script>
-particlesJS("particles-js", {
-  particles: {
-    number: { value: 70 },
-    color: { value: "#22d3ee" },
-    shape: { type: "circle" },
-    opacity: { value: 0.4 },
-    size: { value: 3, random: true },
-    line_linked: {
-      enable: true,
-      distance: 150,
-      color: "#22d3ee",
-      opacity: 0.3,
-      width: 1
-    },
-    move: { enable: true, speed: 2 }
-  }
-});
+
+function toggleMenu() {
+
+document.getElementById("navMenu").classList.toggle("show");
+
+}
+
 </script>
-
-
 
 </body>
 </html>

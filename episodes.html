@@ -1,103 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Episodes | CyberConnect Podcast</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<title>Episodes | CyberConnect Podcast</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <style>
 
-/* EPISODES PAGE */
+/* HEADER */
+
+header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 15px 8%;
+background: white;
+border-bottom: 1px solid #d1fae5;
+}
+
+.logo {
+width: 70px;
+}
+
+nav {
+display: flex;
+gap: 25px;
+}
+
+nav a {
+text-decoration: none;
+color: #155E55;
+}
+
+nav a.active {
+color: #8EEA4A;
+border-bottom: 2px solid #155E55;
+}
+
+/* HAMBURGER */
+
+.hamburger {
+display: none;
+font-size: 28px;
+cursor: pointer;
+}
+
+/* EPISODES */
 
 .episodes-section {
-    padding: 80px 8%;
-    text-align: center;
-}
-
-.episodes-section h2 {
-    font-size: 32px;
-    color: #155E55;
-}
-
-.episodes-section p {
-    color: #4b5563;
-    margin-bottom: 50px;
+padding: 80px 8%;
+text-align: center;
 }
 
 .episode-card {
-    background: white;
-    padding: 30px;
-    border-radius: 12px;
-    margin-bottom: 40px;
-    border: 1px solid #d1fae5;
-    transition: 0.3s ease;
-}
-
-.episode-card:hover {
-    border: 1px solid #8EEA4A;
-    transform: translateY(-5px);
-}
-
-.episode-card h3 {
-    color: #155E55;
-}
-
-.episode-card p {
-    color: #4b5563;
-}
-
-.video-placeholder {
-    margin-top: 30px;
-    background: white;
-    padding: 20px;
-    border-radius: 12px;
-    border: 1px dashed #155E55;
+background: white;
+padding: 30px;
+border-radius: 12px;
+margin-bottom: 40px;
+border: 1px solid #d1fae5;
 }
 
 .video-placeholder iframe {
-    width: 100%;
-    height: 400px;
-    border-radius: 10px;
+width: 100%;
+height: 400px;
+border-radius: 10px;
 }
 
-#particles-js {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background: #f4ffe9;
-    z-index: -1;
-}
+/* MOBILE */
 
-#binaryCanvas {
-    position: fixed;
-    z-index: -1;
-    pointer-events: none;
-}
-.logo  {
-  width: 70px;
-  max-width: 100%;
-}
-.logo {
-  transition: transform 0.3s ease;
-}
-
-.logo:hover {
-  transform: scale(1.05);
-}
 @media(max-width:768px){
-    .video-placeholder {
-        height: 200px;
-    }
+
+nav {
+position: absolute;
+top: 80px;
+right: 0;
+background: white;
+flex-direction: column;
+width: 200px;
+display: none;
+padding: 20px;
 }
-.nav a.active {
-          color: #8EEA4A;
-             border-bottom: 2px solid #155E55;
-             transition: width 0.3 ease;
-        }
+
+nav.show {
+display: flex;
+}
+
+.hamburger {
+display: block;
+}
+
+.video-placeholder iframe {
+height: 220px;
+}
+
+}
 
 
 
@@ -105,16 +104,12 @@
 
 </style>
 
-
 </head>
 
 <body>
 
-<div id="particles-js"></div>
-<canvas id="binaryCanvas"></canvas>
-
 <header>
-    <img src="assets/images/logo.webp" class="logo" alt="logo" style="margin-right: 20px; "> 
+    <img src="/assets/images/logo.jpeg" class="logo" alt="logo">
     <h1>CyberKonnect Podcast</h1>
     <nav>
         <a href="index.html">Home</a>
@@ -128,8 +123,9 @@
 
 <section class="episodes-section">
 
-    <h2>Podcast Episodes</h2>
-    <p>Explore our in-depth discussions on cybersecurity, digital law, and emerging technologies.</p>
+<h2>Podcast Episodes</h2>
+
+<p>Explore cybersecurity discussions.</p>
 
     <!-- Episode 1 -->
     <div class="episode-card">
@@ -141,7 +137,7 @@
         </p>
         <div class="video-placeholder">
            
-            <iframe src="https://www.youtube.com/embed/h_gSZZPp0ls"
+            <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
                     frameborder="0"
                     allowfullscreen>
             </iframe>
@@ -158,7 +154,7 @@
         </p>
         <div class="video-placeholder">
            
-            <iframe src="https://www.youtube.com/embed/g4ENfM5G3-0"
+            <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
                     frameborder="0"
                     allowfullscreen>
             </iframe>
@@ -174,7 +170,7 @@
         </p>
         <div class="video-placeholder">
            
-            <iframe src="https://www.youtube.com/embed/rsjCwLfWhfk"
+            <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
                     frameborder="0"
                     allowfullscreen>
             </iframe>
@@ -184,32 +180,20 @@
 </section>
 
 <footer>
-    © 2026 CyberConnect Podcast | Team House Boys
+
+© 2026 CyberConnect Podcast | Team House Boys
+
 </footer>
 
-<!-- PARTICLES -->
-<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-
 <script>
-particlesJS("particles-js", {
-  particles: {
-    number: { value: 70 },
-    color: { value: "#22d3ee" },
-    shape: { type: "circle" },
-    opacity: { value: 0.4 },
-    size: { value: 3, random: true },
-    line_linked: {
-      enable: true,
-      distance: 150,
-      color: "#22d3ee",
-      opacity: 0.3,
-      width: 1
-    },
-    move: { enable: true, speed: 2 }
-  }
-});
-</script>
 
+function toggleMenu() {
+
+document.getElementById("navMenu").classList.toggle("show");
+
+}
+
+</script>
 
 </body>
 </html>

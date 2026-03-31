@@ -1,4 +1,3 @@
-
 /* =========================
    GLOBAL STYLES
 ========================= */
@@ -19,17 +18,17 @@ body {
 /* =========================
    HEADER / NAVIGATION
 ========================= */
-.logo  {
+
+.logo {
   width: 70px;
   max-width: 100%;
-}
-.logo {
   transition: transform 0.3s ease;
 }
 
 .logo:hover {
   transform: scale(1.05);
 }
+
 header {
     background: #ffffff;
     padding: 20px 8%;
@@ -37,13 +36,21 @@ header {
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #d1fae5;
+
+    position: relative; /* Needed for mobile nav */
 }
 
 header h1 {
     color: #155E55;
     font-size: 22px;
     margin-right: auto;
-    text-align: left;
+    margin-left: 10px;
+}
+
+/* Desktop Navigation */
+
+nav {
+    display: flex;
 }
 
 nav a {
@@ -58,101 +65,89 @@ nav a:hover {
     color: #155E55;
 }
 
-
-
 nav a.active {
   color: #8EEA4A;
   border-bottom: 2px solid #155E55;
-  transition: width 0.3 ease;
+}
+
+/* =========================
+   HAMBURGER MENU
+========================= */
+
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
 }
 
 /* =========================
    HERO SECTION
 ========================= */
 
-
 .hero {
-    text-align: center;
-    padding: 100px 20px;
-}
+  position: relative;
 
-.hero h2 {
-    font-size: 42px;
-    margin-bottom: 20px;
-    color: #155E55;
-}
-
-.hero span {
-    color: #8EEA4A;
-}
-
-.hero p {
-    max-width: 700px;
-    margin: auto;
-    margin-bottom: 30px;
-    color: #4b5563;
-}
-/* HERO SECTION */
-
-.hero {
   padding: 100px 10%;
-  background: #f8fafc;
+
+  /* FIXED IMAGE PATH */
+  background-image: url("../assets/images/hero.webp");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  width: 100%;
+  height: 500px;
+
+  display: flex;
+  align-items: center;
+}
+
+/* Dark overlay */
+
+/*.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: rgba(252, 245, 245, 0.5);
 }
 
 /* Container Layout */
 
-/*.hero-container {
+.hero-container {
+  position: relative;
+  z-index: 1;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   gap: 50px;
-}/
+}
 
 /* TEXT SIDE */
 
 .hero-text {
   max-width: 500px;
+  color: #155E55;
 }
 
-.hero-text h1 {
-  font-size: 52px;
+.hero-text h2 {
+  font-size: 42px;
   margin-bottom: 20px;
+  color:  #155E55;
+}
+
+.hero-text span {
+  color: #8EEA4A;
 }
 
 .hero-text p {
   font-size: 18px;
-  color: #555;
+  color: #155E55;
   margin-bottom: 30px;
   line-height: 1.6;
-}
-
-
-/* IMAGE SIDE */
-
-.hero {
-  background-image: url("assets/images/hero.webp");
-  background-size: cover;        /* fills the div */
-  background-position: center;   /* centers image */
-  background-repeat: no-repeat;  /* prevents repeating */
-
-  width: 100%;
-  height: 500px; /* adjust height as needed */
-}
-@media (max-width: 768px) {
-
-  .hero-container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .hero-text h1 {
-    font-size: 38px;
-  }
-
-  .hero-buttons {
-    justify-content: center;
-  }
-
 }
 
 /* =========================
@@ -245,18 +240,57 @@ footer {
 }
 
 /* =========================
-   RESPONSIVE
+   MOBILE RESPONSIVE
 ========================= */
 
 @media (max-width: 768px) {
-    .hero h2 {
-        font-size: 28px;
+
+    /* Show hamburger */
+
+    .hamburger {
+        display: block;
+    }
+
+    /* Mobile navigation */
+
+    nav {
+        position: absolute;
+        top: 80px;
+        right: 0;
+
+        background: white;
+        width: 220px;
+
+        flex-direction: column;
+
+        transform: translateX(100%);
+        transition: 0.3s ease;
+
+        border-left: 1px solid #d1fae5;
+    }
+
+    nav.active {
+        transform: translateX(0);
     }
 
     nav a {
-        margin-left: 10px;
-        font-size: 12px;
+        padding: 15px;
+        border-bottom: 1px solid #eee;
+
+        margin-left: 0;
     }
+
+    /* Hero Mobile */
+
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text h2 {
+        font-size: 30px;
+    }
+
 }
 
 /* =========================
@@ -304,7 +338,7 @@ footer {
     position: fixed;
     width: 100%;
     height: 100%;
-    background: #f4ffe9;
+    background: transparent;
     z-index: -1;
     top: 0;
     left: 0;
@@ -321,5 +355,3 @@ footer {
     z-index: -1;
     pointer-events: none;
 }
-
-
